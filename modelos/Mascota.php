@@ -20,6 +20,7 @@
             $sql = "UPDATE mascota
             SET idraza = '$idraza', especie = '$especie', nombre ='$nombre', edad ='$edad', tamanio ='$tamanio', genero = '$genero', ubicacion = '$ubicacion', descripcion = '$descripcion'
             WHERE idmascota = '$idmascota'";
+          //  print_r($sql); die();
             return ejecutarConsulta($sql);
         }
 
@@ -37,7 +38,7 @@
             WHERE idmascota = '$idmascota'";
             return ejecutarConsulta($sql);
         }
-        public function mostrar($idraza)
+        public function mostrar($idmascota)
         {
             $sql = "SELECT *
             FROM mascota

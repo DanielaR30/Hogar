@@ -48,10 +48,12 @@
 
         case 'listar':
             $rspta=$raza->listar();
+            //print_r($rspta); die();
             //Definir un array (arreglo)
             $data= Array();
             //Carga en la variable $reg el resultado de la consulta ejecutada con el metodo "listar" y realiza un ciclo por cada fila de datos 
             while ($reg=$rspta->fetch_object()) {
+                
                 //Almacena cada fila del resultado del SELECT en el array $data[]
                 $data[]=array(
                     "0"=>($reg->condicion)?'<button class="btn btn-warning" onclick="mostrar('.$reg->idraza.')"><i class="fa fa-pencil"></i></button>'.
@@ -61,12 +63,14 @@
                     "1"=>$reg->nombre,
                 );
             } 
+
             $results = array(
                 "sEcho"=>1, //Mostrar desde la fila 1
                 "iTotalRecords"=>count($data), //total registros de la tabla
                 "iTotalDisplayRecords"=>count($data), //Total registros a visualizar en pantalla 
                 "aaData"=>$data);//En este indice del array llamado "aaData" se envia los datos del array $data
             //Aqui retorna el array $results a traves de Json
+            //print_r($results); die();
             echo json_encode($results);
                
             break;
@@ -81,7 +85,7 @@
             while ($reg = $rspta->fetch_object()) 
             {
                 //Agregar valores a la lista desplegable, de acuerdo a los datos de cada fila del SELECT
-               echo 'option value=' . $reg->idraza . >' . $reg->nombre . '</option>';
+               echo '<option value= . $reg->idraza . > $reg->nombre </option>';
                // echo '<option value="hola"></option>';
             }
         break;

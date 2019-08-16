@@ -6,16 +6,29 @@ if(!isset($_SESSION["nombre"]))
  }
  else{
 
- require 'header.php';
+  require 'header.php';
 ?>
+<style>
+   .fondo{
+    background: url(../public/img/fondoo.jpg) no-repeat;
+    background-position: center center;
+    background-attachment: fixed; 
+    background-size: cover; 
+    background-color: black;
+    max-height: 100%;
+    max-width: 100%; 
+    margin:0px;
+    padding:0px;  
+    }
+  </style>
 <!--Contenido-->
       <!-- Content Wrapper. Contains page content -->
       <div class="content-wrapper">        
         <!-- Main content -->
         <section class="content">
             <div class="row">
-              <div class="col-md-12">
-                  <div class="box">
+              <div class="col-md-12 fondo">  <br> <br> <br>
+                  <div class="box ">
                     <div class="box-header with-border">
                           <h1 class="box-title">Tabla <button class="btn btn-success" onclick="mostrarform(true)"><i class="fa fa-plus-circle"></i> Agregar</button></h1>
                         <div class="box-tools pull-right">
@@ -38,18 +51,15 @@ if(!isset($_SESSION["nombre"]))
                   </div>
                     <div class="panel-body" style="height: 400px;" id="formularioregistros">
                         <form name="formulario" id="formulario" method="POST">
+                          
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
-
                           <label>Nombre:</label>
                           <input type="hidden" name="idraza" id="idraza">
                           <input type="text" class="form-control" name="nombre" id="nombre" maxlength="50" placeholder="Nombre" required>
                           </div>
-
-                          
-
+                      
                           <div class="form-group col-lg-6 col-md-6 col-sm-6 col-xs-12">
                           <button class="btn btn-primary" type="submit" id="btnGuardar"><i class="fa fa-save"> Guardar</i></button>
-
                           <button class="btn btn-danger" onclick="cancelarform()" type="button"><i class="fa fa-arrow-circle-left">Cancelar</i></button>
                           </div>
 

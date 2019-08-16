@@ -142,7 +142,7 @@
             while ($reg = $rspta->fetch_object()) 
             {
                 //Agregar valores a la lista desplegable, de acuerdo a los datos de cada fila del SELECT
-                echo "<option value= . $reg->idraza . >' . $reg->nombre . '</option>";
+                echo "<option value= . $reg->idraza . > $reg->nombre </option>";
                 //echo '<option value="">Prueba</option>';
             }
         break;

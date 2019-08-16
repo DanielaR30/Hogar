@@ -52,7 +52,7 @@
         public function listar()
         {
             $sql = "SELECT *
-            FROM raza r";
+            FROM raza";
             return ejecutarConsulta($sql);
         }
 

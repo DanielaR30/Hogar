@@ -1,8 +1,11 @@
-    <footer class="main-footer">
+
+
+    <footer class="main-footer fixed-bottom ">
         <div class="pull-right hidden-xs">
-          <b>Version</b> 2.3.0
+          <!-- <b>Version</b>  -->
         </div>
-        <strong>Copyright &copy; 2013-2017 <a href="www.incanatoit.com">IncanatoIT</a>.</strong> All rights reserved.
+        <img src="../public/img/Vivelab.png"  >
+        <strong>Copyright &copy;  </strong> All rights reserved.
     </footer>    
     <!-- jQuery -->
     <script src="../public/js/jquery-3.1.1.min.js"></script>

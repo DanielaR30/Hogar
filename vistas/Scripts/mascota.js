@@ -9,7 +9,7 @@ function init() {
         guardaryeditar(e);
     }
     )
-    //Cargar los items al select escuela
+    //Cargar los items al select raza
     //r: son las opciones que devuelve el archivo ajax/traspaso.php con el valor selectEscuela
     $.post("../ajax/mascota.php?op=selectRaza", function(r)
     {
@@ -109,6 +109,7 @@ function mostrar(idmascota)
 {
     $.post("../ajax/mascota.php?op=mostrar",{idmascota : idmascota}, function(data, status)
     {
+        console.log(data, status);
         data = JSON.parse(data);
         mostrarform(true);
         $("#idmascota").val(data.idmascota);

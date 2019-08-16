@@ -66,6 +66,10 @@ function listar()
                     url: '../ajax/raza.php?op=listar',
                     type: "get",
                     dataType: "json",
+ /*                    success: function(data){
+                        console.log('responsedata');
+                        console.log(data);
+                    }, */
                     error: function(e){
                         console.log(e.responseText);
                     }

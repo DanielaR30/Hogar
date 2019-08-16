@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>SIVO | Sistema de ventas online</title>
+    <title>Homi | Mision hogar</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -15,8 +15,8 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../public/css/_all-skins.min.css">
-    <link rel="apple-touch-icon" href="../public/img/apple-touch-icon.png">
-    <link rel="shortcut icon" href="../public/img/favicon.ico">
+  
+    <link rel="shortcut icon" href="../public/img/icon_dog.png">
 
     <!-- DATATABLES -->
     <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css">
@@ -58,7 +58,7 @@
                 <ul class="dropdown-menu">
                   <!-- User image -->
                   <li class="user-header">
-                    <img src="../public/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                    <img src="../public/img/muser2-160x160.jpg" class="img-circle" alt="User Image">
                    
                   </li>
                   
@@ -76,6 +76,13 @@
           </div>
 
         </nav>
+
+     
+        
+        <br> <br>
+
+        
+         
       </header>
       <!-- Left side column. contains the logo and sidebar -->
       <!-- <aside class="main-sidebar"> -->
