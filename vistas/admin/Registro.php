@@ -1,3 +1,5 @@
+
+
 <?php
 require '../../config/Conexion.php'
 ?>
@@ -11,7 +13,7 @@ require '../../config/Conexion.php'
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Gasto</title>
+    <title>Registro</title>
     <link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="icon" type="image/png"href="favicon/icon.ico"/>
@@ -25,63 +27,55 @@ require '../../config/Conexion.php'
   <div class="container bg-light mt-5 mb-5 w-50 rounded">
     <div class="row">
         <div class="col mx-5 my-5">
-
-        <h1>Gasto</h1>
-        <hr>
-            <form action="../../modelos/admin/Refugio.php?op=gasto" method="POST">
-            <p>
-            <label for="">Recurso</label>
-            <select name="recurso" id="">
-            <?php
-            $consulta="SELECT * FROM recurso";
-            $resultado=mysqli_query($conexion, $consulta);
-            while($mostrar=mysqli_fetch_array($resultado)){
-            ?>
-            <option value="<?php echo $mostrar['idrecurso'] ?>"><?php echo $mostrar['valor'] ?></option>
-            <?php
-            }
-            ?>
-            </select>
-            </p>
-
-            <p>
-            <label for="">tipogasto</label>
-            <select name="tipogasto" id="">
-            <?php
-            $consulta="SELECT * FROM tipogasto";
-            $resultado=mysqli_query($conexion, $consulta);
-            while($mostrar=mysqli_fetch_array($resultado)){
-            ?>
-            <option value="<?php echo $mostrar['idtipogasto'] ?>"><?php echo $mostrar['nombre'] ?></option>
-            <?php
-            }
-            ?>
-            </select>
-            </p>
-
-            <p>
-            <label for="">Valor</label>
-            <input type="text" name="valor" placeholder="Ingrese el valor" required>
-            </p>
-            <p>
-            <label for="">Fecha inicial</label>
-            <input type="date" name="fechaini" placeholder="Ingrese la fecha" required>
-            </p>
-
-            <p>
-            <label for="">Fecha Final</label>
-            <input type="date" name="fechafin" placeholder="Ingrese la fecha" required>
-            </p>
-
-            <p>
-            <label for="">Descripcion</label>
-            <input type="text" name="descripcion" placeholder="agregue una descripcion" required>
-            </p>
-           
-            <button type="submit">Registrar</button>
-            <button type="button" class="btn btn-light"><a href="gastoli.php" style="text-decoration: none;">Cancelar</a> </button>
-        </form>
             
+        <h1>Registro</h1>
+        <hr>
+            <form action="../../modelos/admin/Usuario.php?op=registro" method="POST">
+            <p>
+            <label for="">Ciudad</label>
+            <select name="ciudad" id="">
+            <?php
+            $consulta="SELECT * FROM ciudad";
+            $resultado=mysqli_query($conexion, $consulta);
+            while($mostrar=mysqli_fetch_array($resultado)){
+            ?>
+            <option value="<?php echo $mostrar['idciudad'] ?>"><?php echo $mostrar['nombre'] ?></option>
+            <?php
+            }
+            ?>
+            </select>
+            </p>
+            <p>
+            <label for="">Nombre</label>
+            <input type="text" name="nombre" placeholder="Infrese su nombre" required>
+            </p>
+            <p>
+            <label for="">Apellido</label>
+            <input type="text" name="apellido" placeholder="Infrese su apellido" required>
+            </p>
+
+            <p>
+            <label for="">Cedula</label>
+            <input type="text" name="cedula" placeholder="Infrese su documento" required>
+            </p>
+
+            <p>
+            <label for="">Telefono</label>
+            <input type="text" name="telefono" placeholder="Infrese su telefono" required>
+            </p>
+            <p>
+            <label for="">Correo</label>
+            <input type="email" name="correo" placeholder="Infrese su cooreo" required>
+            </p>
+            <p>
+            <label for="">Contraseña</label>
+            <input type="text" name="clave" placeholder="Infrese su clave" required>
+            </p>
+            <button type="submit">Registrar</button>
+            <button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Cancelar</a> </button>
+            <br>
+            <button type="button" class="btn btn-light"><a href="fotoli.php" style="text-decoration: none;">Formulario adopción</a> </button>
+        </form>
         </div>            
      </div>
   </div>

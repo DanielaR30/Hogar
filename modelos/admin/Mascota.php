@@ -4,7 +4,6 @@ session_start();
 switch ($_GET["op"]) {
     case 'mascota':
         $raza=$_POST["raza"];
-       
         $refugio=$_POST["refugio"];
         $especie=$_POST["especie"];
         $nombre=$_POST["nombre"];
@@ -13,11 +12,11 @@ switch ($_GET["op"]) {
         $genero=$_POST["genero"];
         $ubicacion=$_POST["ubicacion"];
         $descripcion=$_POST["descripcion"];
-       
+        $condicion=$_POST["condicion"];
         
          //Ejecutanto insercion a la base de datos
-        $insertar="INSERT INTO mascota(idraza, idrefugio, especie, nombre, edad, tamanio, genero, ubicacion, descripcion,) 
-                    VALUES ('$raza','$refugio','$especie' , '$nombre', '$edad', '$tamanio', '$genero', '$ubicacion', '$descripcion')";
+        $insertar="INSERT INTO mascota(idraza, idrefugio, especie, nombre, edad, tamanio, genero, ubicacion, descripcion, condicion) 
+                    VALUES ('$raza','$refugio','$especie' , '$nombre', '$edad', '$tamanio', '$genero', '$ubicacion', '$descripcion', '$condicion')";
        
        $result=mysqli_query($conexion, $insertar);
 
@@ -27,5 +26,40 @@ switch ($_GET["op"]) {
             echo "<script>alert('Mascota agregada');window.location= '../../vistas/admin/mascota.php'</script>";
         }
     break;
+     
+    case 'foto':
+    $mascota=$_POST["mascota"];
+    $imagen=$_POST["imagen"];
+    
+     //Ejecutanto insercion a la base de datos
+    $insertar="INSERT INTO foto(idmascota,imagen) 
+                VALUES ('$mascota','$imagen')";
+
+    $result=mysqli_query($conexion, $insertar);
+    if(!$result){
+        echo "<script>alert('Error');window.location= '../../vistas/admin/foto.php'</script>";
+    }else{
+        echo "<script>alert('Foto agregada');window.location= '../../vistas/admin/foto.php'</script>";
+    }
+    break;
+
+      case 'raza':
+            $nombre=$_POST["nombre"];
+        
+        
+            
+            //Ejecutanto insercion a la base de datos
+            $insertar="INSERT INTO raza(idraza, nombre) 
+                        VALUES ('$nombre')";
+
+
+    $result=mysqli_query($conexion, $insertar);
+    if(!$result){
+        echo "<script>alert('Error ');window.location= '../../vistas/admin/raza.php'</script>";
+    }else{
+        echo "<script>alert('mascota registrada');window.location= '../../vistas/admin/raza.php'</script>";
+    }
+    break;  
+
 }
 ?>

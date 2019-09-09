@@ -62,7 +62,7 @@
                             <a href="index.html#about">Acerca de </a>
                         </li>
                         <li>
-                            <a href="index.html#mascota">Mascotas</a>
+                        <a href="../admin/fotoli.php" style="text-decoration: none;">Mascotas</a>
                         </li>
 
                         <li>
@@ -310,51 +310,48 @@
                         <div class="nk-carousel-inner">
     
     
-                            <div>
+                        <div>
                                 <div>
                                     <div class="pl-15 pr-15">
                                         <div class="nk-blog-post">
                                             <div class="nk-post-thumb">
                                                 <a href="blog-single.html">
-                                                    <img src="assets/images/post-1-mid.jpg" alt="" class="nk-img-stretch">
-                                                    
+                                                    <img src="assets/images/post-4-mid.jpg" alt="" class="nk-img-stretch">
                                                 </a>
-                                                <div class="nk-post-category"><a href="#">Ver más</a></div>
+                                                <div class="nk-post-category"><a href="#">Branding</a></div>
                                             </div>
-                                            <h2 class="nk-post-title h4"><a href="blog-single.html"> coco </a></h2>
+                                            <h2 class="nk-post-title h4"><a href="blog-single.html">Are you doing the Right Way?</a></h2>
     
                                             <div class="nk-post-date">
-                                                September 18, 2016
+                                                August 14, 2016
                                             </div>
     
                                             <div class="nk-post-text">
-                                                <p>That female isn't midst divide kind upon seas lights greater green creature lights brought.</p>
+                                                <p>Which all, morning isn't. Female and own living dry, and morning lesser first he stars under years thing.</p>
                                             </div>
                                         </div>
                                     </div>
                                     <div class="nk-gap-1"></div>
                                 </div>
                             </div>
-    
-    
                             <div>
                                 <div>
                                     <div class="pl-15 pr-15">
                                         <div class="nk-blog-post">
                                             <div class="nk-post-thumb">
                                                 <a href="blog-single.html">
-                                                    <img src="assets/images/post-3-mid.jpg" alt="" class="nk-img-stretch">
+                                                    <img src="assets/images/post-4-mid.jpg" alt="" class="nk-img-stretch">
                                                 </a>
-                                                <div class="nk-post-category"><a href="#">Nature</a></div>
+                                                <div class="nk-post-category"><a href="#">Branding</a></div>
                                             </div>
-                                            <h2 class="nk-post-title h4"><a href="blog-single.html">The History of Nature</a></h2>
+                                            <h2 class="nk-post-title h4"><a href="blog-single.html">Are you doing the Right Way?</a></h2>
     
                                             <div class="nk-post-date">
-                                                August 27, 2016
+                                                August 14, 2016
                                             </div>
     
                                             <div class="nk-post-text">
-                                                <p>Third is fly. From one under in itself two waters, all own. Said male shall greater own grass.</p>
+                                                <p>Which all, morning isn't. Female and own living dry, and morning lesser first he stars under years thing.</p>
                                             </div>
                                         </div>
                                     </div>
