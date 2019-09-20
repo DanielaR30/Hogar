@@ -47,34 +47,34 @@ require '../../config/Conexion.php'
             </p>
             <p>
             <label for="">Nombre</label>
-            <input type="text" name="nombre" placeholder="Infrese su nombre" required>
+            <input type="text" name="nombre" placeholder="Ingrese su nombre" required>
             </p>
             <p>
             <label for="">Apellido</label>
-            <input type="text" name="apellido" placeholder="Infrese su apellido" required>
+            <input type="text" name="apellido" placeholder="Ingrese su apellido" required>
             </p>
 
             <p>
             <label for="">Cedula</label>
-            <input type="text" name="cedula" placeholder="Infrese su documento" required>
+            <input type="text" name="cedula" placeholder="Ingrese su documento" required>
             </p>
 
             <p>
             <label for="">Telefono</label>
-            <input type="text" name="telefono" placeholder="Infrese su telefono" required>
+            <input type="text" name="telefono" placeholder="Ingrese su telefono" required>
             </p>
             <p>
             <label for="">Correo</label>
-            <input type="email" name="correo" placeholder="Infrese su cooreo" required>
+            <input type="email" name="correo" placeholder="Ingrese su cooreo" required>
             </p>
             <p>
             <label for="">Contraseña</label>
-            <input type="text" name="clave" placeholder="Infrese su clave" required>
+            <input type="text" name="clave" placeholder="Ingrese su clave" required>
             </p>
             <button type="submit">Registrar</button>
             <button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Cancelar</a> </button>
-            <br>
-            <button type="button" class="btn btn-light"><a href="fotoli.php" style="text-decoration: none;">Formulario adopción</a> </button>
+         
+         
         </form>
         </div>            
      </div>

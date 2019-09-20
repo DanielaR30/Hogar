@@ -23,17 +23,18 @@ require '../../config/Conexion.php'
     >
  
   <div class="container bg-light mt-5 mb-5 w-70 rounded">
-    <div class="row">
-        <div class="col mx-5 my-5">
+    <div class="row mx-5 my-5">
+        
 
             <h1>Mascotas</h1>
-            <button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Dar en adopción</a> </button>
+            <button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Agregar</a> </button>
             <hr>
             <?php 
                         $consulta= "SELECT * FROM foto";
                         $resultado= mysqli_query($conexion,$consulta);
                         while ($mostrar=mysqli_fetch_array($resultado)){
                             ?>
+                            <div class="col-3">
             <div class="card" style="width: 18rem;">
             <img class="card-img-top" src="../../public/img/<?php echo $mostrar['imagen']?>" alt=" Card image cap <?php echo $mostrar['nombre']?>" width="100%">
                  <!-- <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap"> -->
@@ -42,7 +43,7 @@ require '../../config/Conexion.php'
     <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
             <a href="mascotali.php" class="btn btn-primary">Ver más</a>
             <button type="button" class="btn btn-light"><a href="Registro.php" style="text-decoration: none;">Adoptar</a> </button>
-            </div>
+            </div></div>
             <?php
                         }
                         ?> 
@@ -50,6 +51,13 @@ require '../../config/Conexion.php'
             
         </div>            
      </div>
+  </div>
+  <div class="container bg-ligth mt-5 mb-5 w-70 rounded">
+    <div class="row m-5">
+        <div class="col-12">
+        <h1>Mascotas</h1><button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Agregar</a></button><hr>
+        </div>
+    </div>
   </div>
 
     <!-- Optional JavaScript -->

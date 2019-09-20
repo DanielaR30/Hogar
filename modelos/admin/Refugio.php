@@ -5,15 +5,14 @@ switch ($_GET["op"]) {
     case 'refugio':
         $nombre=$_POST["nombre"];
         $direccion=$_POST["direccion"];
-        $email=$_POST["correo"];
         $telefono=$_POST["telefono"];
         $capacidad=$_POST["capacidad"];
-        $condicion=$_POST["condicion"];
+        $estado=$_POST["estado"];
        
         
          //Ejecutanto insercion a la base de datos
-        $insertar="INSERT INTO refugio(idrefugio, nombre, direccion, telefono, capacidad, condicion) 
-                    VALUES ('$nombre', '$direccion', '$telefono', '$capacidad', '$condicion')";
+        $insertar="INSERT INTO refugio(idrefugio, nombre, direccion, telefono, capacidad, estado) 
+                    VALUES ('$nombre', '$direccion', '$telefono', '$capacidad', '$estado')";
             
             $result=mysqli_query($conexion, $insertar);
         if(!$result){
@@ -21,9 +20,28 @@ switch ($_GET["op"]) {
         }else{
             echo "<script>alert('refugio agregado');window.location= '../../vistas/admin/refugio.php'</script>";
         }
-        break;
+    break;
 
-        case 'recurso':
+    case 'editarrefugio':
+        $nombre=$_POST["nombre"];
+        $direccion=$_POST["direccion"];
+        $telefono=$_POST["telefono"];
+        $capacidad=$_POST["capacidad"];
+        $estado=$_POST["estado"];
+    
+        
+        //Ejecutanto insercion a la base de datos
+        $editar="UPDATE refugio 
+        SET nombre='$nombre', direccion='$direccion', telefono='$telefono', capacidad='$capacidad', estado='$estado'"
+            $consulta=mysqli_query($conexion, $editar);
+            if(!$editar){
+            echo "<script>alert('Error');window.location= '../../vistas/admin/atencionmedicali.php'</script>";
+            }else{
+            echo "<script>window.location= '../../vistas/admin/atencionmedicali.php'</script>";
+            }
+    break;
+
+    case 'recurso':
         $refugio=$_POST["refugio"];
         $valor=$_POST["valor"];
         $fecha=$_POST["fecha"];
@@ -40,10 +58,9 @@ switch ($_GET["op"]) {
         }else{
             echo "<script>alert('valor agregado');window.location= '../../vistas/admin/recurso.php'</script>";
         }
+    break;
 
-        break;
-
-        case 'gasto':
+    case 'gasto':
         $recurso=$_POST["recurso"];
         $tipogasto=$_POST["tipogasto"];
         $valor=$_POST["valor"];
@@ -80,7 +97,7 @@ switch ($_GET["op"]) {
         }else{
             echo "<script>alert('Gasto agregado');window.location= '../../vistas/admin/tipogasto.php'</script>";
         }
-        break;    
+    break;    
 
 
 }

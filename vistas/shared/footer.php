@@ -30,7 +30,8 @@
 
     <div class="foot">
 			<div class="relativa2">
-				<span>Actividad realizada por: DanielaRoncancio</span>
+        <span>Actividad realizada por: DanielaRoncancio</span> <strong>Copyright &copy;  </strong> All rights reserved.
+        <span>Con colaboración de:</span>
 				<p>Fotografias de la portada <a href="https://unsplash.com/"><span class="link">Unsplash</span></a></p>
 				<a href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="img/footer.png" alt="" width="90" height="30"></a>
       </div>
@@ -40,7 +41,7 @@
           <!-- <b>Version</b>  -->
         </div>
         <img src="../public/img/Vivelab.png"  >
-        <strong>Copyright &copy;  </strong> All rights reserved.
+
 
     </footer>    
 

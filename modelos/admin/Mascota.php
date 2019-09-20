@@ -16,16 +16,39 @@ switch ($_GET["op"]) {
         
          //Ejecutanto insercion a la base de datos
         $insertar="INSERT INTO mascota(idraza, idrefugio, especie, nombre, edad, tamanio, genero, ubicacion, descripcion, condicion) 
-                    VALUES ('$raza','$refugio','$especie' , '$nombre', '$edad', '$tamanio', '$genero', '$ubicacion', '$descripcion', '$condicion')";
+                    VALUES ('$raza','$refugio','$especie' , '$nombre', '$edad', '$tamanio', '$genero', '$ubicacion', '$descripcion', '1')";
        
        $result=mysqli_query($conexion, $insertar);
 
         if(!$result){
-            echo "<script>alert('Error ');window.location= '../../vistas/admin/mascota.php'</script>";
+            echo "<script>alert('Error ');window.location= '../../vistas/admin/mascotali.php'</script>";
         }else{
-            echo "<script>alert('Mascota agregada');window.location= '../../vistas/admin/mascota.php'</script>";
+            echo "<script>window.location= '../../vistas/admin/mascotali.php'</script>";
         }
     break;
+
+
+    case 'editarmascota':
+    $raza=$_POST["raza"];
+    $refugio=$_POST["refugio"];
+    $especie=$_POST["especie"];
+    $nombre=$_POST["nombre"];
+    $edad=$_POST["edad"];
+    $tamanio=$_POST["tamanio"];
+    $genero=$_POST["genero"];
+    $ubicacion=$_POST["ubicacion"];
+    $descripcion=$_POST["descripcion"];
+    $condicion=$_POST["condicion"];
+
+    $editar="UPDATE mascota 
+    SET raza='$raza', refugio='$refugio', especie='$especie', nombre='$nombre', edad='$edad', tamanio='$tamanio', genero='$genero', ubicacion='$ubicacion', descripcion='$descripcion', condicion='$condicion'";
+    $consulta=mysqli_query($conexion, $editar);
+    if(!$editar){
+        echo "<script>alert('Error');window.location= '../../vistas/admin/mascotali.php'</script>";
+    }else{
+        echo "<script>window.location= '../../vistas/admin/mascotali.php'</script>";
+        }
+break;
      
     case 'foto':
     $mascota=$_POST["mascota"];

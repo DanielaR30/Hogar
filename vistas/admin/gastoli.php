@@ -4,23 +4,20 @@ require '../../config/Conexion.php'
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-<title>Gasto</title>
-<link rel="stylesheet" href="css/estilos.css">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-<link rel="icon" type="image/png"href="favicon/icon.ico"/>
+    <title>Gasto</title>
+    <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
+    <link rel="icon" type="image/png"href="favicon/icon.ico"/>
 
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
+  <body style="background: url(../../public/img/fondo.jpg) no-repeat; background-size: 100% 100%; background-position: fixed;">
  
   <div class="container bg-light mt-5 mb-5 w-70 rounded">
     <div class="row">
@@ -30,7 +27,7 @@ require '../../config/Conexion.php'
             <button type="button" class="btn btn-light"><a href="gasto.php" style="text-decoration: none;">Agregar</a> </button>
             <hr>
           
-            <table>
+            <table class="table table-borderless">
                 <thead>
                 <tr>
                     <th>Recurso</th>
@@ -39,8 +36,6 @@ require '../../config/Conexion.php'
                     <th>Fecha de inicio</th>
                     <th>Fecha final</th>
                     <th>Descripción</th>
-                  
-
                 </tr>
                 </thead>
                 <tbody>

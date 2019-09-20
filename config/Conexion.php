@@ -15,21 +15,21 @@ if (mysqli_connect_errno())
 
 //Ejecuta un comando: INSERT UPDATE Y DELETE
 //Retorna 1 si se ejecuta bien, de lo contrario retorna 0
-function ejecutarConsulta($sql)
-{
-    global $conexion;
-    $query = $conexion->query($sql);
-    return $query;
-}
+// function ejecutarConsulta($sql)
+// {
+//     global $conexion;
+//     $query = $conexion->query($sql);
+//     return $query;
+// }
 
 //Ejecuta un comando SELECT 
 //Retorna una fila del resultado de la consulta 
-function consultarUnaFila($sql)
-{
-    global $conexion;
-    $query = $conexion->query($sql);
-    $row = $query->fetch_assoc();
-    return $row;
-}
+// function consultarUnaFila($sql)
+// {
+//     global $conexion;
+//     $query = $conexion->query($sql);
+//     $row = $query->fetch_assoc();
+//     return $row;
+// }
 
-?>
+// ?>

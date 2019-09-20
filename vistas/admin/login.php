@@ -1,3 +1,6 @@
+<?php
+require '../../config/Conexion.php'
+?>
 <!DOCTYPE html>
 <html>
   <head>

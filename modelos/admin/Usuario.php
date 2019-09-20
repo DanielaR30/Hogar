@@ -29,6 +29,7 @@ switch ($_GET["op"]) {
                 echo "<script>alert('Usuario registrado');window.location= '../../vistas/usuario/Registro.php'</script>";
             }
         }
+
     break;
 
         
@@ -42,9 +43,9 @@ switch ($_GET["op"]) {
 
     $result=mysqli_query($conexion, $insertar);
     if(!$result){
-        echo "<script>alert('Error');window.location= '../../vistas/usuario/ciudad.php'</script>";
+        echo "<script>alert('Error');window.location= '../../vistas/admin/ciudad.php'</script>";
     }else{
-        echo "<script>alert('ciudad agregada');window.location= '../../vistas/usuario/ciudad.php'</script>";
+        echo "<script>window.location= '../../vistas/admin/ciudad.php'</script>";
     }
     break;
 
@@ -52,7 +53,7 @@ switch ($_GET["op"]) {
         $nombre=$_POST["nombre"];
     
         //Ejecutanto insercion a la base de datos
-        $insertar="INSERT INTO departamento(iddepartamento, nombre) 
+        $insertar="INSERT INTO departamento( nombre) 
                     VALUES ('$nombre')";
 
     $result=mysqli_query($conexion, $insertar);
@@ -63,52 +64,33 @@ switch ($_GET["op"]) {
     }
     break;
 
-
     case 'ingreso':
-        $usuario=$_POST["usuario"];
+        $usuario=$_POST["correo"];
         $clave=$_POST["clave"];
-        $validarusuario="SELECT nombre,rol,idusuario FROM usuario WHERE email='$usuario' AND contrasenia='$clave'";
+        $validarusuario="SELECT nombre,rol,idpersona FROM persona WHERE correo='$usuario' AND clave='$clave'";
         $resultado=mysqli_query($conexion, $validarusuario);
         $fila=mysqli_num_rows($resultado);
         if($fila=$resultado->fetch_object()){
             $_SESSION["Nombre"]=$fila->nombre;
             $_SESSION["rol"]=$fila->rol;
-            $_SESSION["idusuario"]=$fila->idusuario;
+            $_SESSION["idpersona"]=$fila->idpersona;
             echo json_encode($fila);
         }else{
             echo'<script>alert("Error")</script>';
         }
-        if(($_SESSION["rol"])=="cliente"){
+        if(($_SESSION["rol"])=="usuario"){
             header('Location: ../vistas/Usuario/Index.php');
         }else{
             header('Location: ../vistas/Administrador/Index.php');
         }
     break;
-    case 'ingresoEmpresa':
-        $usuario=$_POST["usuario"];
-        $clave=$_POST["clave"];
-        $validarusuario="SELECT nombre, tipo, idempresa FROM empresa WHERE correo='$usuario' AND contrasenia='$clave'";
-        $resultado=mysqli_query($conexion, $validarusuario);
-        $fila=mysqli_num_rows($resultado);
-        if($fila=$resultado->fetch_object()){
-            $_SESSION["tipo"]=$fila->tipo;
-            $_SESSION["idempresa"]=$fila->idempresa;
-            header('Location: ../vistas/Empresa/Index.php');
-            echo json_encode($fila);
-        }else{
-            echo "Fallo";
-            // echo "<script>alert('Datos Incorrectos');window.location= '../vistas/Empresa/Login.php'</script>";
-        }
-    break;
-    case 'salirEmpresa':
-        session_destroy();
-        header("Location: ../vistas/Empresa/Login.php");
-    break;
+
     case 'salir':
         session_destroy();
         header("Location: ../vistas/Shared/Login.php");
     break;
 
+    
 
     case 'cuestionario':
     $preg1=$_POST["preg1"];
@@ -128,7 +110,7 @@ switch ($_GET["op"]) {
     $preg15=$_POST["preg15"]; 
 
      //Ejecutanto insercion a la base de datos
-    $insertar="INSERT INTO cuestionario (idcuestionario, preg1,preg2,preg3,preg4,preg5,preg6,preg7,preg8,preg9,preg10,preg11,preg12,preg13,preg14, preg15)
+    $insertar="INSERT INTO cuestionario (preg1,preg2,preg3,preg4,preg5,preg6,preg7,preg8,preg9,preg10,preg11,preg12,preg13,preg14, preg15)
             VALUES ('$preg1','$preg2','$preg3','$preg4','$preg5','$preg6','$preg7','$preg8','$preg9','$preg10','$preg11','$preg12','$preg13','$preg14','$preg15')";
     
     $result=mysqli_query($conexion, $insertar);
@@ -156,6 +138,7 @@ $result=mysqli_query($conexion, $insertar);
         }else{
             echo "<script>alert('Adopción Solicitada');window.location= '../../vistas/usuario/adopcion.php'</script>";
         }
+      
 
     break;
 }
