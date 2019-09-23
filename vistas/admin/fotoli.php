@@ -35,15 +35,16 @@ require '../../config/Conexion.php'
                         while ($mostrar=mysqli_fetch_array($resultado)){
                             ?>
                             <div class="col-3">
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="../../public/img/<?php echo $mostrar['imagen']?>" alt=" Card image cap <?php echo $mostrar['nombre']?>" width="100%">
-                 <!-- <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap"> -->
-            <div class="card-body">
-            <!-- <h5 class="card-title">Card title</h5> -->
-    <!-- <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p> -->
-            <a href="mascotali.php" class="btn btn-primary">Ver más</a>
-            <button type="button" class="btn btn-light"><a href="Registro.php" style="text-decoration: none;">Adoptar</a> </button>
-            </div></div>
+                                  <div class="card" style="width: 18rem;">
+                                  <img class="card-img-top" src="../../public/img/<?php echo $mostrar['imagen']?>" alt=" Card image cap <?php echo $mostrar['nombre']?>" width="100%">
+                                      <!-- <img class="card-img-top" src=".../100px180/?text=Image cap" alt="Card image cap"> -->
+                                  <div class="card-body">
+           <h5 class="card-title">Card title</h5> 
+   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                        <a href="mascotali.php" class="btn btn-primary">Ver más</a>
+                        <button type="button" class="btn btn-light"><a href="Registro.php" style="text-decoration: none;">Adoptar</a> </button>
+                        </div>
+                      </div>
             <?php
                         }
                         ?> 
@@ -52,6 +53,8 @@ require '../../config/Conexion.php'
         </div>            
      </div>
   </div>
+
+
   <div class="container bg-ligth mt-5 mb-5 w-70 rounded">
     <div class="row m-5">
         <div class="col-12">

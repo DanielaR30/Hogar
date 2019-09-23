@@ -43,9 +43,9 @@ switch ($_GET["op"]) {
 
     $result=mysqli_query($conexion, $insertar);
     if(!$result){
-        echo "<script>alert('Error');window.location= '../../vistas/admin/ciudad.php'</script>";
+        echo "Error";
     }else{
-        echo "<script>window.location= '../../vistas/admin/ciudad.php'</script>";
+        echo "<script>window.location= '../../vistas/usuario/Registro.php'</script>";
     }
     break;
 
@@ -58,9 +58,9 @@ switch ($_GET["op"]) {
 
     $result=mysqli_query($conexion, $insertar);
     if(!$result){
-    echo "<script>alert('Error');window.location= '../../vistas/admin/departamento.php'</script>";
+    echo "Error";
     }else{
-    echo "<script>alert('Departamento agregado');window.location= '../../vistas/admin/departamento.php'</script>";
+    echo "<script>window.location= '../../vistas/usuario/ciudad.php'</script>";
     }
     break;
 
@@ -71,7 +71,7 @@ switch ($_GET["op"]) {
         $resultado=mysqli_query($conexion, $validarusuario);
         $fila=mysqli_num_rows($resultado);
         if($fila=$resultado->fetch_object()){
-            $_SESSION["Nombre"]=$fila->nombre;
+            $_SESSION["nombre"]=$fila->nombre;
             $_SESSION["rol"]=$fila->rol;
             $_SESSION["idpersona"]=$fila->idpersona;
             echo json_encode($fila);
@@ -79,15 +79,15 @@ switch ($_GET["op"]) {
             echo'<script>alert("Error")</script>';
         }
         if(($_SESSION["rol"])=="usuario"){
-            header('Location: ../vistas/Usuario/Index.php');
+            header('Location: ../vistas/usuario/Index.php');
         }else{
-            header('Location: ../vistas/Administrador/Index.php');
+            header('Location: ../../vistas/admin/Index.php');
         }
     break;
 
     case 'salir':
         session_destroy();
-        header("Location: ../vistas/Shared/Login.php");
+        header("Location: ../../vistas/admin/Login.php");
     break;
 
     
@@ -115,9 +115,10 @@ switch ($_GET["op"]) {
     
     $result=mysqli_query($conexion, $insertar);
     if(!$result){
-        echo "<script>alert('Error');window.location= '../../vistas/admin/cuestionario.php'</script>";
+        echo "error";
     }else{
-        echo "<script>alert('Cuestionario enviado ');window.location= '../../vistas/admin/cuestioonario.php'</script>";
+        echo "Solicitud enviada";
+        echo "<script>;window.location= '../../vistas/usuario/cuestionario.php'</script>";
     }
 
     break;  

@@ -26,7 +26,7 @@ require '../../config/Conexion.php'
     <div class="row">
         <div class="col mx-5 my-5">
 
-        <h1>Fotos</h1>
+        <h1>Foto</h1>
         
         <hr>
             <form action="../../modelos/admin/Mascota.php?op=foto" method="POST">

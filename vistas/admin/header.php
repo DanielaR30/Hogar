@@ -1,180 +1,147 @@
+<?php
+require '../../config/Conexion.php'
+?>
 <!DOCTYPE html>
-<html>
-  <head>
+<html lang="en">
+
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Homi | Mision hogar</title>
-    <!-- Tell the browser to be responsive to screen width -->
-    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <!-- Bootstrap 3.3.5 -->
-    <link rel="stylesheet" href="../public/css/bootstrap.min.css">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="../public/css/font-awesome.css">
-    <!-- Theme style -->
-    <link rel="stylesheet" href="../public/css/AdminLTE.min.css">
-    <!-- AdminLTE Skins. Choose a skin from the css/skins
-         folder instead of downloading all of them to reduce the load. -->
-    <link rel="stylesheet" href="../public/css/_all-skins.min.css">
-  
-    <link rel="shortcut icon" href="../public/img/icon_dog.png">
 
-    <!-- DATATABLES -->
-    <link rel="stylesheet" type="text/css" href="../public/datatables/jquery.dataTables.min.css">
-    <link rel="stylesheet" type="text/css" href="../public/datatables/buttons.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../public/datatables/responsive.dataTables.min.css"/>
-    <link rel="stylesheet" type="text/css" href="../public/css/bootstrap-select.min.css">
+    <title>Homi | Misión hogar</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <meta name="description" content="Snow - Clean & Minimal Portfolio HTML template.">
+    <meta name="keywords" content="portfolio, clean, minimal, blog, template, portfolio website">
+    <meta name="author" content="nK">
 
-  </head>
-  <body class="hold-transition skin-blue-light sidebar-mini">
-    <div class="wrapper">
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
 
-      <header class="main-header">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <!-- Logo -->
-        <!-- <a href="index2.html" class="logo">
-           mini logo for sidebar mini 50x50 pixels 
-          <span class="logo-mini"><b>MHS</b>Raza</span>
-          logo for regular state and mobile devices 
-          <span class="logo-lg"><b>Raza</b></span>
-        </a> -->
+    <!-- START: Styles -->
 
-        <!-- Header Navbar: style can be found in header.less -->
-        <nav class="" role="">
-          <!-- Sidebar toggle button-->
-          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
-            <span class="sr-only">Navegación</span>
-          </a>
-          <!-- Navbar Right Menu -->
-          <div class="">
-            <ul class="">
-              <!-- Messages: style can be found in dropdown.less-->
-              
-              <!-- User Account: style can be found in dropdown.less -->
-              <li class="dropdown user user-menu">
-                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
-                  <!-- <img src="" class="user-image" alt="User Image"> -->
-                  <span class="hidden-xs"> <?php echo $_SESSION["nombre"]; ?></span>
-                </a>
-                <ul class="dropdown-menu">
-                  <!-- User image -->
-                  <li class="user-header">
-                    <img src="../public/img/muser2-160x160.jpg" class="img-circle" alt="User Image">
-                   
-                  </li>
-                  
-                  <!-- Menu Footer-->
-                  <li class="user-footer">
-                    
-                    <div class="pull-right">
-                      <a href="../ajax/usuario.php?op=salir" class="btn btn-default btn-flat">Cerrar</a>
-                    </div>
-                  </li>
-                </ul>
-              </li>
-              
-            </ul>
-          </div>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i,700,700i%7cWork+Sans:400,500,700" rel="stylesheet" type="text/css">
+    
+    <link rel="stylesheet" href="assets/css/combined.css">
 
+    <!-- END: Styles -->
+
+
+
+</head>
+
+<body>
+
+    <header class="nk-header">
+        <!--
+        START: Navbar 
+    --> 
+
+        <nav class="nk-navbar nk-navbar-top mt-2 mb-5 mx-4 nk-navbar-sticky " 
+        style="border-radius: 25px; a:hover">
+            <div class="container">
+                <div class="nk-nav-table">
+                    <a href="index.php" class="nk-nav-logo">
+                        <img src="assets/images/logoo-light.png" alt="" width="85" class="nk-nav-logo-onscroll">
+                        <img src="assets/images/logoo.png" alt="" width="85">
+                    </a>
+                    <ul class="nk-nav nk-nav-right hidden-md-down" data-nav-mobile="#nk-nav-mobile">
+
+<li>
+    <a href="index.php#about">Refugio</a>
+</li>
+
+<li>
+<a href="portfolio.php" style="text-decoration: none;">Mascotas</a>
+</li>
+<li>
+    <a href="atencion_edit.php">Atenciones</a>
+</li>
+<li>
+                            <a href="persona.php">Usuarios</a>
+                        </li>
+                        <!-- <li>
+                            <a href="portfolio.php">Portfolio</a>
+                        </li>
+                        <li>
+                            <a href="blog.html">Blog</a>
+                        </li>-->
+          
+
+                        <li> 
+                            <a href="../usuario/index.php">Cerrar Sesión</a>
+                        </li>
+</ul>
+
+                    <ul class="nk-nav nk-nav-right nk-nav-icons">
+                        <li class="single-icon hidden-lg-up">
+                            <a href="#" class="nk-navbar-full-toggle">
+                                <span class="nk-icon-burger">
+                                    <span class="nk-t-1"></span>
+                                    <span class="nk-t-2"></span>
+                                    <span class="nk-t-3"></span>
+                                </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
+        <!-- END: Navbar -->
 
-     
-        
-        <br> <br>
+    </header>
 
-        
-         
-      </header>
-      <!-- Left side column. contains the logo and sidebar -->
-      <!-- <aside class="main-sidebar"> -->
-        <!-- sidebar: style can be found in sidebar.less -->
-        
-        <!-- <section class="sidebar">       
-           sidebar menu: : style can be found in sidebar.less -->
-          <!-- <ul class="sidebar-menu">
-            <li class="header"></li>
-            <li>
-              <a href="#">
-                <i class="fa fa-tasks"></i> <span>Escritorio</span>
-              </a>
-            </li>            
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-laptop"></i>
-                <span>Almacén</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="articulo.php"><i class="fa fa-circle-o"></i> Artículos</a></li>
-                <li><a href="categoria.php"><i class="fa fa-circle-o"></i> Categorías</a></li>
-              </ul>
-            </li>
-            
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-th"></i>
-                <span>Compras</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="ingreso.php"><i class="fa fa-circle-o"></i> Ingresos</a></li>
-                <li><a href="proveedor.php"><i class="fa fa-circle-o"></i> Proveedores</a></li>
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-shopping-cart"></i>
-                <span>Ventas</span>
-                 <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="venta.php"><i class="fa fa-circle-o"></i> Ventas</a></li>
-                <li><a href="cliente.php"><i class="fa fa-circle-o"></i> Clientes</a></li>
-              </ul>
-            </li>                       
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-folder"></i> <span>Acceso</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="usuario.php"><i class="fa fa-circle-o"></i> Usuarios</a></li>
-                <li><a href="permiso.php"><i class="fa fa-circle-o"></i> Permisos</a></li>
-                
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-bar-chart"></i> <span>Consulta Compras</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="consultacompras.php"><i class="fa fa-circle-o"></i> Consulta Compras</a></li>                
-              </ul>
-            </li>
-            <li class="treeview">
-              <a href="#">
-                <i class="fa fa-bar-chart"></i> <span>Consulta Ventas</span>
-                <i class="fa fa-angle-left pull-right"></i>
-              </a>
-              <ul class="treeview-menu">
-                <li><a href="consultaventas.php"><i class="fa fa-circle-o"></i> Consulta Ventas</a></li>                
-              </ul>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-plus-square"></i> <span>Ayuda</span>
-                <small class="label pull-right bg-red">PDF</small>
-              </a>
-            </li>
-            <li>
-              <a href="#">
-                <i class="fa fa-info-circle"></i> <span>Acerca De...</span>
-                <small class="label pull-right bg-yellow">IT</small>
-              </a>
-            </li>
-                        
-          </ul>
-        </section> --> 
 
-        <!-- /.sidebar -->
-      <!-- </aside> -->
+    <!--
+    START: Navbar Mobile
+-->
+    <nav class="nk-navbar nk-navbar-full nk-navbar-align-center" id="nk-nav-mobile">
+        <div class="nk-navbar-bg">
+            <div class="bg-image" style="background-image: url('assets/images/bg-menu.jpg')"></div>
+        </div>
+        <div class="nk-nav-table">
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-header">
+
+                        <div class="nk-nav-logo">
+                            <a href="index.html" class="nk-nav-logo">
+                                <img src="assets/images/logoo-light.png" alt="" width="85">
+                            </a>
+                        </div>
+
+                        <div class="nk-nav-close nk-navbar-full-toggle">
+                            <span class="nk-icon-close"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row-full nk-nav-row">
+                <div class="nano">
+                    <div class="nano-content">
+                        <div class="nk-nav-table">
+                            <div class="nk-nav-row nk-nav-row-full nk-nav-row-center nk-navbar-mobile-content">
+                                <ul class="nk-nav">
+                                    <!-- Here will be inserted menu from [data-mobile-menu="#nk-nav-mobile"] -->
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="nk-nav-row">
+                <div class="container">
+                    <div class="nk-nav-social">
+                        <ul>
+                            <li><a href="https://twitter.com/nkdevv"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/unvabdesign/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://dribbble.com/_nK"><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href="https://www.instagram.com/unvab/"><i class="fa fa-instagram"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- END: Navbar Mobile -->

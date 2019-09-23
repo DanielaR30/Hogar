@@ -1,5 +1,6 @@
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -16,7 +17,14 @@ require '../../config/Conexion.php'
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
 	<link rel="icon" type="image/png"href="favicon/icon.ico"/>
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; background-size: 100% 100%; background-position: fixed;">
+  <body style="background: url(../../public/img/fondoo.jpg) no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
 
 <div class="container bg-light mt-5 mb-5 w-50 rounded">
 <div class="row">
@@ -97,12 +105,15 @@ require '../../config/Conexion.php'
                          <label for="">Nombre</label>
                          <input type="text"  value="<?php echo $mostrar['nombre'] ?>" name="nombre" required>
                          </p>
+
                          <p>
                          <label for="">Funcionario</label>
                          <input type="text" value="<?php echo $mostrar['funcionario'] ?>" name="funcionario"  required>
                          </p>
+
                          <div class="col-12 text-right"><button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cerrar</button>
-                              <button type="submit" class="btn btn-danger">Guardar</button></div>
+                              <button type="submit" class="btn btn-danger">Guardar</button>
+                            </div>
                          </form>
              </div>
              </div>
@@ -110,11 +121,16 @@ require '../../config/Conexion.php'
             <?php }?>
            </tbody>
     </table>
+
+    <button type="button" class="btn btn-light"><a href="atencion_edit.php" style="text-decoration: none;">cancelar</a> </button>
 </div>
 </div>
 </div>
 
-
+<br> <br> <br> <br>  
+         <?php
+require 'footer.php';
+?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

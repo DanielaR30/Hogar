@@ -27,17 +27,15 @@ switch ($_GET["op"]) {
         $direccion=$_POST["direccion"];
         $telefono=$_POST["telefono"];
         $capacidad=$_POST["capacidad"];
-        $estado=$_POST["estado"];
-    
-        
+      
         //Ejecutanto insercion a la base de datos
         $editar="UPDATE refugio 
-        SET nombre='$nombre', direccion='$direccion', telefono='$telefono', capacidad='$capacidad', estado='$estado'"
+        SET nombre='$nombre', direccion='$direccion', telefono='$telefono', capacidad='$capacidad'";
             $consulta=mysqli_query($conexion, $editar);
             if(!$editar){
-            echo "<script>alert('Error');window.location= '../../vistas/admin/atencionmedicali.php'</script>";
+            echo "Error";
             }else{
-            echo "<script>window.location= '../../vistas/admin/atencionmedicali.php'</script>";
+            echo "<script>window.location= '../../vistas/admin/refugioli.php'</script>";
             }
     break;
 

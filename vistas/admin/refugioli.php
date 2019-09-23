@@ -1,5 +1,6 @@
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,60 +14,69 @@ require '../../config/Conexion.php'
 
     <title>Refugio</title>
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
+  <body style="background: url(../../public/img/fondoo.jpg) no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
  
   <div class="container bg-light mt-5 mb-5 w-50 rounded">
     <div class="row">
-        <div class="col mx-5 my-5">
+        <div class="col mx-5 my-5 py-5">
 
         <h1>Refugio</h1>
-            <table class="table table-borderless">
-                <thead>
-                <tr>
-                    <th>Nombre</th>
-                    <th>Dirección</th>
-                    <th>Teléfono</th>
-                    <th>Capacidad</th>
-                    <th>mascotas</th>
-                    <th>Opciones</th>
-                </tr>
-                </thead>
-                <tbody>
-                    <?php 
+        <?php 
                     $consulta= "SELECT * FROM refugio";
                     $resultado= mysqli_query($conexion,$consulta);
                     while ($mostrar=mysqli_fetch_array($resultado)){
                     ?>
-                    <tr>
-                        <td><?php echo $mostrar['nombre']?></td>
-                        <td><?php echo $mostrar['direccion']?></td>
-                        <td><?php echo $mostrar['telefono']?></td>
-                        <td><?php echo $mostrar['capacidad']?></td>
-                        <td> <?php
+            <table class=" table-borderless">
+              
+           
+
+                <tbody>
+                  
+                 <tr>
+                    <th>Opciones</th> 
+                    <td style="padding: 10px; text-align: center">
+                        <button type="button" class="btn" data-toggle="modal" data-target="#edita<?php echo $mostrar['idrefugio'] ?>"><i class="fas fa-pen"></i></button>
+                     </td> 
+                 </tr>
+
+                 <tr> <th>Nombre</th>
+                 <td><?php echo $mostrar['nombre']?></td></tr>  
+                   <tr><th>Dirección</th>
+                   <td><?php echo $mostrar['direccion']?></td> </tr> 
+                    <tr><th>Teléfono</th>
+                    <td><?php echo $mostrar['telefono']?></td> </tr>
+                   <tr><th>Capacidad</th>
+                   <td><?php echo $mostrar['capacidad']?></td> </tr> 
+                   <tr><th>mascotas</th>
+                   
+                   <td> <?php
                                                                $conteo = 0;
                                                                 $consultando = $conexion->query("SELECT COUNT(m.idmascota) as conteo 
                                                                                                  FROM refugio r, mascota m 
                                                                                                   WHERE r.idrefugio=m.idrefugio");
                                                                 $consulta = $consultando->fetch_assoc();
                                                                 $conteo = $consulta["conteo"];
-                                                                if ($conteo > 100) {
+                                                                if ($conteo >= 100) {
                                                                     echo 'sin cupo';
                                                                 } else {
                                                                     echo $conteo;
                                                                 } ?> 
                                                                 </td>
-                        
-                        <td style="padding: 10px; text-align: center">
-                        <button type="button" class="btn" data-toggle="modal" data-target="#edit<?php echo $mostrar['idrefugio'] ?>"><i class="fas fa-pen"></i></button>
-                        
-                     </td> 
-                  </tr>
+                        </tr> 
+                   
+
+
                  
                <!-- Modal edit -->
-                    <div class="modal fade" id="edit<?php echo $mostrar['idrefugio'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+              
+                    <div class="modal fade" id="edita<?php echo $mostrar['idrefugio'] ?>" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-lg modal-full-height modal-right modal-notify modal-info" role="document">
                     <div class="modal-content">
                     <div class="modal-header">
@@ -75,45 +85,48 @@ require '../../config/Conexion.php'
                                   <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true" class="white-text">×</span></button>
                     </div>
                               <!--Body-->
-                              <form action="../../Modelos/Admin.php?op=editaratencionmedica" method="POST">
+                              <form action="../../modelos/admin/Refugio.php?op=editarrefugio" method="POST">
                                   <div class="row modal-body">
 
                               <p>
                               <label for="">Nombre</label>
-                              <input type="text"  value="<?php echo $mostrar['fecha'] ?>" name="nombre" required>
+                              <input type="text"  value="<?php echo $mostrar['nombre'] ?>" name="nombre" required>
                               </p>
                               <p>
                               <label for="">Direccion</label>
-                              <input type="text" value="<?php echo $mostrar['direcciom'] ?>" name="direccion"  required>
+                              <input type="text" value="<?php echo $mostrar['direccion'] ?>" name="direccion"  required>
                               </p>
                               <p>
                               <label for="">Teléfono</label>
-                              <input type="text" value="<?php echo $mostrar['tratamiento'] ?>" name="telefono"  required>
+                              <input type="text" value="<?php echo $mostrar['telefono'] ?>" name="telefono"  required>
                               </p>
                               <p>
                               <label for="">Capacidad</label>
-                              <input type="text" value="<?php echo $mostrar['tratamiento'] ?>" name="capacidad"  required>
+                              <input type="text" value="<?php echo $mostrar['capacidad'] ?>" name="capacidad"  required>
                               </p>
                              
                               <div class="col-12 text-right"><button type="button" class="btn btn-secondary mr-3" data-dismiss="modal">Cerrar</button>
-                              <button type="submit" class="btn btn-danger">Guardar</button></div>
+                              <button type="submit" class="btn btn-danger">Guardar</button>
                               </div>
-                              </form>
-                              <?
                              
-                              ?>
+                              </form>
+                              
                           
                           </div>
                       </div>
-                  </div>
-                    <?php }?>
+                     </div>
+                
                 </tbody>
-            </table>
+            </table><?php }?>
             
         </div>            
      </div>
   </div>
 
+<br> <br> <br> <br>  
+         <?php
+require 'footer.php';
+?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

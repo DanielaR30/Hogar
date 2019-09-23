@@ -1,5 +1,6 @@
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -11,17 +12,22 @@ require '../../config/Conexion.php'
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
-    <title>Hello, world!</title>
-	<link rel="stylesheet" href="css/estilos.css">
-	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" integrity="sha384-5sAR7xN1Nv6T6+dT2mhtzEpVJvfS3NScPQTrOxhwjIuvcA67KV2R5Jz6kr4abQsz" crossorigin="anonymous">
-	<link rel="icon" type="image/png"href="favicon/icon.ico"/>
-
+    <title>Usuarios</title>
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
-	<h1>Agregar Raza</h1>
+  <body style="background: url(../../public/img/fondoo.jpg) no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
+ 
+  <div class="container bg-light mt-5 mb-5 w-50 rounded">
+    <div class="row">
+        <div class="col mx-5 my-5">
+
+        <h1>Agregar Raza</h1>
             <form action="../../modelos/admin/Mascota.php?op=raza" method="POST">
 
             <p>
@@ -30,15 +36,16 @@ require '../../config/Conexion.php'
             </p>
           
 			<button type="submit">Aceptar</button>
-			<button type="button" class="btn btn-light"><a href="razali.php" style="text-decoration: none;">Cancelar</a> </button>
+			<button type="button" class="btn btn-light"><a href="mascota_agr.php" style="text-decoration: none;">Cancelar</a> </button>
         </form>
-  <div class="container bg-light mt-5 mb-5 w-50 rounded">
-    <div class="row">
-        <div class="col mx-5 my-5">
             
         </div>            
      </div>
   </div>
+  <br> <br> <br> <br>  
+         <?php
+require 'footer.php';
+?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -47,3 +54,7 @@ require '../../config/Conexion.php'
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
   </body>
 </html>
+
+
+
+

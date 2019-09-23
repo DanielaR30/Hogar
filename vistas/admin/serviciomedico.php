@@ -1,5 +1,6 @@
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -14,9 +15,13 @@ require '../../config/Conexion.php'
     <title>Servicio Médico</title>
   </head>
   <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
  
   <div class="container bg-light mt-5 mb-5 w-50 rounded">
     <div class="row">
@@ -51,7 +56,10 @@ require '../../config/Conexion.php'
         </div>            
      </div>
   </div>
-
+  <br> <br> <br> <br>  
+         <?php
+require 'footer.php';
+?>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

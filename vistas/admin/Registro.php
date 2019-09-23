@@ -1,7 +1,6 @@
-
-
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -19,10 +18,14 @@ require '../../config/Conexion.php'
 	<link rel="icon" type="image/png"href="favicon/icon.ico"/>
 
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
+  <body style="background: url(../../public/img/fondoo.jpg) no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
  
   <div class="container bg-light mt-5 mb-5 w-50 rounded">
     <div class="row">
@@ -72,13 +75,17 @@ require '../../config/Conexion.php'
             <input type="text" name="clave" placeholder="Ingrese su clave" required>
             </p>
             <button type="submit">Registrar</button>
-            <button type="button" class="btn btn-light"><a href="mascota.php" style="text-decoration: none;">Cancelar</a> </button>
+            <button type="button" class="btn btn-light"><a href="portfolio.php" style="text-decoration: none;">Cancelar</a> </button>
          
          
         </form>
         </div>            
      </div>
   </div>
+  <br> <br> <br> <br>  
+         <?php
+require 'footer.php';
+?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->

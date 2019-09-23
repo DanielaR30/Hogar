@@ -1,5 +1,6 @@
 <?php
-require '../../config/Conexion.php'
+require '../../config/Conexion.php';
+require 'header.php';
 ?>
 <!doctype html>
 <html lang="en">
@@ -13,10 +14,14 @@ require '../../config/Conexion.php'
 
     <title>Ciudad</title>
   </head>
-  <body style="background: url(../../public/img/fondo.jpg) no-repeat; 
-    background-size: 100% 100%; 
-    background-position: fixed;"
-    >
+  <body style="background: url(../../public/img/fondoo.jpg) no-repeat; 
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center center;
+    height: 800px; 
+    background-position: fixed;">
+
+<br> <br> <br> <br>
  
   <div class="container bg-light mt-5 mb-5 w-50 rounded">
     <div class="row">
@@ -54,6 +59,10 @@ require '../../config/Conexion.php'
         </div>            
      </div>
   </div>
+  <br> <br> <br> <br>   <br>
+         <?php
+require 'footer.php';
+?>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
